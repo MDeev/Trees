@@ -1,6 +1,7 @@
 # Trees
 A free responsive bootstrap website template.
 - Demo: [https://www.mohamedjaoufi.ml/demo/Trees](https://www.mohamedjaoufi.ml/demo/Trees)
+- Download: [Download](https://github.com/MDeev/Trees/archive/master.zip)
 
 ## For publishers/builders
   - Copy and past all files and folders inside of #dist# folder to your website.
