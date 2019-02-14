@@ -1,0 +1,38 @@
+.loader{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	@include colors(green, dark2);
+	opacity: .95;
+	overflow: hidden;
+	z-index: 999999999;
+
+	span {
+		@extend %inline;
+		width: 55px;
+		height: 55px;
+		border-radius: 50%;
+		overflow: hidden;
+		background-color: transparent;
+		border: 5px solid;
+		border-color: map-get($color, white) map-get($color, green) map-get($color, white) map-get($color, white);
+		position: absolute;
+		top: calc(50% - (60px/ 2));
+		left: calc(50% - (60px/ 2));
+		transform: translate(-50%, -50%);
+		@include transition;
+		animation: loading .7s infinite;
+	}
+}
+
+@keyframes loading {
+	0%, 100% {
+		transform: rotate(0);
+	}
+	100% {
+		
+		transform: rotate(360deg);
+	}
+}

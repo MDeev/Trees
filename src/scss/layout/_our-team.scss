@@ -1,0 +1,85 @@
+.our-team{
+
+	@include colors(null, gray1);
+	@extend %default-row;
+	.team{
+		.team-member{
+			@include colors(null, white);
+			@include p(0 20px);
+			@include mt(140);
+			@include mr(30);
+			@include ml(30);
+			border: 1px solid map-get($color, gray2);
+			border-radius: 20px;
+			cursor: pointer;
+			@include transition;
+			height: calc(100% - (140px * 1.2));
+			@include mb(-50);
+
+			&:hover{
+				@include shadow(0, 0, 50px, #ccc, .50);
+				.member img{ filter: grayscale(0); }
+			}
+
+			.member{
+				position: relative;
+				top: -110px;
+				img{
+					@include mb(50);
+					@include transition(.5s);
+					filter: grayscale(100%);
+				}
+				h5{
+					@include font($bold);
+					@include fontSize(22);
+					@include mb(30);
+
+					@media #{$lg} { font-size: 20px; }
+					@media #{$xlg} { font-size: 22px; }
+				}
+				span{
+					text-transform: none;
+					@include colors(green);
+					@include mb(30);
+					@extend %block;
+				}
+				.social{
+					a {
+						@include colors(null, dark);
+					    @include transition;
+						@extend %inline;
+						@include mr(5);
+						@include ml(5);
+						@include p(25px);
+					    border-radius: 50%;
+					    background-size: auto;
+					    background-position: center;
+					    background-repeat: no-repeat;
+
+						@media #{$lg} { padding: 20px; }
+						@media #{$xlg} { padding: 25px; }
+
+						&:first-of-type{
+							background-image: url('../img/social-facebook.png');
+							&:hover{
+								background-color: #3b5998;
+							}
+						}
+						&:nth-of-type(2){
+							background-image: url('../img/social-twitter.png');
+							&:hover{
+								background-color: #1da1f2;
+							}
+						}
+						&:last-of-type{
+							background-image: url('../img/social-google.png');
+							&:hover{
+								background-color: #ea4335;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

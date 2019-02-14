@@ -1,0 +1,95 @@
+.our-services{
+
+	@include colors(null, gray1);
+	@extend %default-row;
+	overflow: hidden;
+
+	.service{
+		@include colors(null, white);
+		@include p(20px 20px 60px);
+		@include transition;
+		@include shadow(2px, 2px, 15px, #CCC, .22);
+		overflow: hidden;
+
+		@media #{$sm} {
+			transform: translateY(0);
+			margin: 0 20px 50px;
+		} 
+
+		@media #{$md} { 
+			transform: translateY(0);
+			margin: 0 20px 50px;
+		} 
+
+		@media #{$lg} { 
+			transform: translateY(15px);
+			margin: 0;
+		}
+
+		&:hover{ @include shadow(2px, 2px, 15px, #CCC, .7); }
+
+		.pricing{
+			position: relative;
+			span{
+				@include font($bold);
+				&:first-of-type{
+					@include fontSize(22);
+					position: absolute;
+					top: 15%;
+					transform: translateX(-15px);
+				}
+				&:nth-of-type(2){
+					@include fontSize(90);
+				}
+				&:last-of-type{
+					@extend %block;
+					@include fontSize(22);
+					transform: translateY(-25px);
+
+				}
+			}
+		}
+
+		.service-list{
+
+			@include mb(30);
+
+			ul li{
+				@include colors(dark);
+				opacity: .6;
+				line-height: 2;
+				@include fontSize(18);
+			}
+		}
+
+		.btn{
+			width: 70%;
+			@include fontSize(18);
+			@include p(10px 20px);
+			box-shadow: none;
+		}
+	}
+
+	.popular{
+		@include colors(white, green);
+		transform: translateY(-10px);
+
+		@media #{$sm} { transform: translateY(0); } 
+
+		@media #{$md} { transform: translateY(0); } 
+
+		@media #{$lg} { transform: translateY(-10px); } 
+
+		.service-list ul li{
+			@include colors(white);
+			opacity: .7;
+		}
+
+		.btn{
+			@include colors(green, white);
+			&:hover{
+				@include colors(null, gray2);
+			}
+		}
+	}
+}

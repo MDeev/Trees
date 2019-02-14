@@ -1,0 +1,60 @@
+.about-us{
+
+	@include colors(white, green);
+	@extend %default-row;
+
+	.about{
+			
+		.about-info{
+
+			@include pr(15);
+			@include pl(15);
+
+			div{
+				@extend %block;
+
+				span{
+					@include font($bold);
+					@include mb(10);
+					@extend %block;
+				}
+
+				p{
+					text-transform: none;
+					@include colors(gray3);
+				}
+			}
+
+			@media #{$sm} {
+				margin-top: 30px;
+				img{ height: 78px; }
+				div{ text-align: center; margin: 5px auto; }
+				span, p{ font-size: 16px; }
+			} 
+
+			@media #{$md} {
+				margin-top: 30px;
+				img{ height: 78px; }
+				div{ text-align: center; margin: 5px auto; }
+				span{ font-size: 18px; }
+				p{ font-size: 16px; }
+			} 
+
+			@media #{$lg} {
+				margin-top: 60px;
+				div{
+					text-align: left;
+
+					&:first-of-type{
+						width: 30%;
+					}
+					&:last-of-type{
+						width: 70%;
+					}
+				}
+				span{ font-size: 20px; }
+				p{ font-size: 18px; }
+			} 
+		}
+	}
+}

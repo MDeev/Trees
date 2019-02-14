@@ -1,0 +1,28 @@
+
+// Importing fonts
+$normal: 'Arimo-Regular';
+$bold: 'Arimo-Bold';
+
+@font-face {
+	font-family: 'Arimo-Regular';
+	src: url('../fonts/Arimo-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Arimo-Bold';
+	src: url('../fonts/Arimo-Bold.ttf');
+}
+
+
+// Color
+$color: (
+	green: #5eaf87,
+	green2: #42966e,
+	dark: #484747,
+	dark2: #454545,
+	white: #FFF,
+	gray1: #fafafa,
+	gray2: #F1F1F1,
+	gray3: #e5e5e5,
+	gray4: #ccc
+);

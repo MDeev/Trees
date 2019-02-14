@@ -1,0 +1,51 @@
+.ideas{
+	@extend %default-row;
+	@include colors(null, white);
+	overflow: hidden;
+	text-transform: uppercase;
+
+	.idea{
+
+		h2{
+			@include font($bold);
+			@include mb(15);
+		}
+
+		& > span{
+			@include font($bold);
+			@include colors(green);
+			@include mb(40);
+			@extend %block;
+		}
+
+		p{
+			@include fontSize(16);
+			text-transform: none;
+			span:first-of-type{
+				@include mb(20);
+				@extend %block;
+			}
+		}
+
+		@media #{$sm} {
+			margin-top: 30px;
+			h2{ font-size: 25px; }
+			& > span{ font-size: 14px; }
+			p{ margin: 0 15px; font-size: 15px; }
+		} 
+
+		@media #{$md} {
+			margin-top: 30px;
+			h2{ font-size: 35px; }
+			& > span{ font-size: 16px; }
+			p{ margin: 0 10px; font-size: 15px; }
+		} 
+
+		@media #{$lg} {
+			margin-top: 10px;
+			h2{ font-size: 50px; }
+			& > span{ font-size: 18px; }
+			p{ margin: 0; font-size: 16px; }
+		} 
+	}
+}

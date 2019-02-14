@@ -1,0 +1,31 @@
+.top {
+	position: fixed;
+	bottom: 50px;
+	right: 65px;
+	width: 50px;
+	height: -150px;
+	border-radius: 50%;
+	@include colors(white, green);
+	@include shadow;
+	@include transition;
+	@include pt(2);
+	@include pb(2);
+	transform: rotate(90deg);
+	cursor: pointer;
+
+	@media #{$sm} { display: none !important; visibility: hidden !important; } 
+
+	&:hover{
+		@include colors(null, green2);
+	}
+
+	span{
+		text-align: center;
+		@include fontSize(31);
+		@include font($bold);
+
+		&:after{
+			content: '⇜';
+		}
+	}
+}

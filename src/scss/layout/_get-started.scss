@@ -1,0 +1,6 @@
+.get-started{
+
+	@include colors(null, white);
+	@extend %default-row;
+	overflow: hidden;
+}

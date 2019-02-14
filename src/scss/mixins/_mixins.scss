@@ -1,0 +1,83 @@
+
+// Font family
+@mixin font($f: $normal) {
+	font-family: $f, sans-serif, Arial, monospace;
+}
+
+// Font size
+@mixin fontSize($size: 16) {
+	font-size: $size + px;
+}
+
+// Colors
+@mixin colors($c: null, $bg: null) {
+	@if($c != null) {
+		color: map-get($color, $c);
+	}
+	@if($bg != null) {
+		background-color: map-get($color, $bg);
+	}
+}
+
+// Margin
+@mixin m($m) {
+	margin: $m;
+}
+// Margin top
+@mixin mt($m) {
+	margin-top: $m + px;
+}
+// Margin bottom
+@mixin mb($m) {
+	margin-bottom: $m + px;
+}
+// Margin bottom
+@mixin ml($m) {
+	margin-left: $m + px;
+}
+// Margin bottom
+@mixin mr($m) {
+	margin-right: $m + px;
+}
+
+
+// Padding
+@mixin p($p) {
+	padding: $p;
+}
+// Padding top
+@mixin pt($p) {
+	padding-top: $p + px;
+}
+// Padding bottop
+@mixin pb($p) {
+	padding-bottom: $p + px;
+}
+// Padding bottop
+@mixin pl($p) {
+	padding-left: $p + px
+}
+// Padding bottop
+@mixin pr($p) {
+	padding-right: $p + px;
+}
+
+// Box shadow 
+@mixin shadow ($x:2px, $y:2px, $b:6px /* blur */, $c: #333, $op: .16 /* Opacity */) {
+	box-shadow: $x $y $b rgba($c, $op);
+}
+
+
+// Gradient
+@mixin gradient ($to, $op1, $op2, $op3: null) {
+	@if($op3 == null) {
+		background-image: linear-gradient(to $to, $op1, $op2);
+	} @else {
+		background-image: linear-gradient(to $to, $op1, $op2, $op3);
+	}
+}
+
+
+@mixin transition ($sec: .3s) {
+	transition: all $sec ease-in-out;
+}

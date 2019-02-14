@@ -1,0 +1,66 @@
+.contact{
+	@include colors(null, white);
+	@extend %default-row;
+
+	.talk{
+		h2, span{
+			@include font($bold);
+		}
+
+		span{
+			@include colors(green);
+			@include mb(30);
+			@extend %block;
+		}
+		
+		p, ul li{
+			text-transform: none;
+		}
+		p{
+			@include mb(30);
+		}
+
+		ul{
+			li{
+				@include colors(dark2);
+				@include mb(7);
+				opacity: .85;
+				&:before{
+					content: '';
+					width: 22px;
+					height: 22px;
+					background-image: url('../img/checkmark.png');
+					background-repeat: no-repeat;
+				    background-position: center;
+				    background-size: cover;
+    				position: relative;
+    				bottom: -4px;
+				    @extend %inline;
+				    @include mr(5);
+				}
+			}
+		}
+
+		@media #{$sm} {
+			h2{ font-size: 50px; }
+			span{ font-size: 16px; }
+			ul li{ font-size: 14px; }
+		} 
+
+		@media #{$md} {
+			h2{ font-size: 55px; }
+			span{ font-size: 16px; }
+			ul li{ font-size: 15px; }
+		} 
+
+		@media #{$lg} {
+			h2{ font-size: 70px; }
+			span{ font-size: 20px; }
+			ul li{ font-size: 16px; }
+		} 
+	}
+
+	img{
+		@include mt(30);
+	}
+}

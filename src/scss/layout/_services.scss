@@ -1,0 +1,64 @@
+.services{
+
+	@include colors(null, gray1);
+	@extend %default-row;
+
+	.service{
+		@include colors(null, white);
+		@include p(40px);
+		@include transition;
+		border-radius: 5px;
+		border: 1px solid map-get($color, gray2);
+
+		@media #{$sm} {
+			margin: 0 15px 20px;
+		} 
+
+		@media #{$md} {
+			margin: 0 15px 20px;
+		} 
+
+		@media #{$lg} {
+			margin: 0;
+		} 
+
+		.logo {
+			@include colors(null, gray1);
+			@include p(20px);
+			@extend %inline;
+			border-radius: 50%;
+			@include mb(40);
+		}
+
+		h5{
+			@include font($bold);
+			@include mb(20);
+		}
+
+		p{
+			font-weight: 400;
+			text-transform: none;
+			@include mb(40);
+		}
+
+		a{
+			@include p(10px 20px);
+			border: 2px solid map-get($color, green);
+			@include colors(green);
+			@include transition;
+			border-radius: 70px;
+			text-decoration: none;
+			@include font($bold);
+			@include mb(40);
+
+			&:hover {
+				@include colors(white, green);
+			}
+		}
+
+
+		&:hover {
+			@include shadow(0, 0, 50px, #ccc, .50);
+		}
+	}
+}

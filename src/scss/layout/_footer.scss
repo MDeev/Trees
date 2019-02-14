@@ -1,0 +1,88 @@
+.footer{
+
+	@include colors(gray4, dark);
+	@include pt(40);
+	@include pb(30);
+	overflow: hidden;
+
+	.col-md-4{
+
+		@media #{$sm} { margin-bottom: 15px;  span a { margin-top: 0; } } 
+
+		@media #{$md} { margin-bottom: 15px; span a { margin-top: 0; } } 
+
+		@media #{$lg} { margin-bottom: 0; span a { margin-top: 10px; } } 
+
+		@include fontSize(14);
+		span a {
+			@include colors(gray4);
+			text-decoration: none;
+			@include transition;
+			@extend %inline;
+		}
+
+		&:first-of-type{
+			span {
+				a {
+					@include colors(green);
+					&:hover{
+						@include colors(green2);
+					}
+				}
+			}
+		}
+		&:nth-of-type(2){
+			span {
+				a {
+					background-color: #666;
+					@include p(20px);
+					@extend %inline;
+					@include mr(5);
+					@include ml(5);
+				    border-radius: 50%;
+				    background-size: auto;
+				    background-position: center;
+				    background-repeat: no-repeat;
+				    opacity: .8;
+    				@include mt(0);
+
+					@media #{$sm} { margin-left: 25px; margin-right: 25px; } 
+
+				}
+
+			    
+				&:first-of-type a{
+					background-image: url('../img/social-facebook.png');
+					&:hover{
+						background-color: #3b5998;
+					}
+				}
+				&:nth-of-type(2) a{
+					background-image: url('../img/social-twitter.png');
+					&:hover{
+						background-color: #1da1f2;
+					}
+				}
+				&:last-of-type a{
+					background-image: url('../img/social-google.png');
+					&:hover{
+						background-color: #ea4335;
+					}
+				}
+			}
+		}
+		&:last-of-type{
+			span a{
+				@include pr(5);
+				@include pl(5);
+				&:hover{
+					@include colors(gray1);
+				}
+			}
+
+			@media #{$sm} { margin-bottom: 0;  } 
+
+			@media #{$md} { margin-bottom: 0;  } 
+		}
+	}
+}

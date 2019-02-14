@@ -1,0 +1,131 @@
+.content{
+	.header{
+		min-height: 100vh;
+		position: relative;
+		overflow: hidden;
+		text-transform: uppercase;
+		background-image: url('../img/header-image.jpg');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	    background-position: center;
+	    background-size: cover;
+
+	    // Navbar
+	    @import 'layout/_navbar';
+
+		.header-welcome {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			overflow: hidden;
+			@include p(20px);
+			@extend %block;
+			width: 100%;
+
+			.header-content{
+				overflow: hidden;
+
+				h1{
+					@include font($bold);
+					@include m(0px);
+				}
+
+				p{
+					@include mb(40);
+				}
+
+				.row .col-md-6 {
+					.btn{
+						border-radius: 70px;
+						border: 2px solid;
+						@include transition;
+						@include shadow;
+					}
+
+					&:first-of-type .btn {
+						@include colors(white, green);
+						border-color: map-get($color, green);
+
+						&:hover {
+							@include colors(white, green2);
+							border-color: map-get($color, green2);
+						}
+					}
+
+					&:last-of-type .btn {
+						@include colors(dark);
+						border-color: map-get($color, dark);
+						&:hover {
+							@include colors(white, dark);
+						}
+					}
+				}
+
+				@media #{$sm} {
+					h1{ font-size: 100px; }
+					p{ font-size: 15px; }
+					.btn{ margin-bottom: 15px; padding: 5px 10px; font-size: 18px; width: 180px; }
+				} 
+
+				@media #{$md} {
+					h1{ font-size: 100px; }
+					p{ font-size: 18px; }
+					.btn{ margin-bottom: 15px; padding: 7px 14px; font-size: 20px; width: 200px; }
+				} 
+
+				@media #{$lg} {
+					h1{ font-size: 120px; }
+					p{ font-size: 20px; }
+					.btn{ margin-bottom: 0; padding: 10px 20px; font-size: 22px; width: 220px; }
+				} 
+			}
+		}
+	}
+}
+
+
+
+%default-row{
+	@include pt(90);
+	@include pb(90);
+	text-transform: uppercase;
+
+	.title {
+		@include font($bold);
+		@include mb(10);
+	}
+	.intro {
+		@include colors(green);
+		@include mb(40);
+	}
+	.btn{
+		border-radius: 70px;
+		@include fontSize(22);
+		@include transition;
+		@include shadow;
+		@include colors(white, green);
+
+		&:hover{
+			@include colors(white, green2);
+		}
+	}
+
+	@media #{$sm} {
+		.title { font-size: 30px; }
+		.intro { font-size: 14px; }
+		.btn { padding: 5px 35px; }
+	} 
+
+	@media #{$md} {
+		.title { font-size: 30px; }
+		.intro { font-size: 14px; }
+		.btn { padding: 5px 35px; }
+	} 
+
+	@media #{$lg} {
+		.title { font-size: 50px; }
+		.intro { font-size: 18px; }
+		.btn { padding: 10px 70px; }
+	} 
+}

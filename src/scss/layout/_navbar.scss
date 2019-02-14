@@ -1,0 +1,68 @@
+.navbar {
+	@include font($bold);
+	@include p(10px 2px);
+	z-index: 99;
+
+	@media #{$sm} { 
+		background-color: #fffcf9 !important;
+		.nav-link { display: inline-block; margin-bottom: 5px }
+		padding: 15px;
+	} 
+
+	@media #{$md} { 
+		background-color: #fffcf9 !important;
+		.nav-link { display: inline-block; margin-bottom: 5px }
+	} 
+
+	@media #{$lg} { 
+		background-color: transparent !important; 
+		.nav-link { margin-bottom: 0 }
+		.nav-link:hover{ animation: nav-heart 1s infinite; }
+	} 
+	
+	.navbar-brand img{
+		width: 40px;
+	}
+
+	.navbar-toggler{
+		outline: none;
+	}
+
+	.nav-link{
+		@include p(4px 10px);
+		@include mt(5);
+		@include ml(4);
+		@include mr(4);
+		@include transition;
+		border: 2px solid transparent;
+		border-color: transparent;
+		position: relative;
+		@include transition;
+	}
+
+	.active{
+		@include colors(green);
+		border: 2px solid;
+		border-color: map-get($color, green);
+		border-radius: 70px;
+		padding: 7px 20px;
+		@include pt(9);
+		@include mt(0);
+
+		&:hover{
+			@include colors(white, green);
+		}
+	}
+}
+
+
+
+@keyframes nav-heart {
+	0%, 100% { 
+		transform: scale(1);
+	}
+
+	50% {  
+		transform: scale(.9);
+	}
+}

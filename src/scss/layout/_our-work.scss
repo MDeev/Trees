@@ -1,0 +1,29 @@
+.our-work{
+
+	@include colors(null, white);
+	@extend %default-row;
+
+	.intro{
+		@extend %block;
+		@include mb(40);
+	}
+
+	.work{
+		overflow: hidden;
+		@include mb(30);
+		img{
+			@include shadow(0, 0, 10px, #333, .25);
+			@include transition;
+			@extend %block;
+			width: 100%;
+			cursor: pointer;
+			overflow: hidden;
+			border-radius: 5px;
+
+			&:hover{
+				@include shadow(0, 0, 10px, #333, .5);
+				filter: brightness(.85);
+			}
+		}
+	}
+}

@@ -1,0 +1,67 @@
+.subscribe-us{
+
+	@include colors(null, green);
+	@extend %default-row;
+
+	.title{
+		@include colors(white);
+	}
+
+	.intro{
+		@include colors(white);
+		@include mb(50);
+		@extend %block;
+	}
+	.subscribe{
+		input{
+			box-shadow: none;
+			border-radius: 50px;
+			@include colors(white);
+			background-color: transparent;
+			border: 2px solid map-get($color, white);
+
+			&::placeholder{
+				@include colors(white);
+			}
+		}
+
+		input[type="button"]{
+			@include colors(green, white);
+			border: 0;
+
+			&:hover{
+				@include colors(null, gray2);
+			}
+		}
+
+		@media #{$sm} {
+			input{
+				width: 85%;
+				display: block;
+	            margin : 0 auto 25px;
+	            font-size: 16px;
+	            padding: 22px;
+        	}
+        	input[type="button"]{ padding: 10px; }
+		} 
+
+		@media #{$md} {
+			input{
+				width: 85%;
+				display: block;
+	            margin : 0 auto 25px;
+	            font-size: 18px;
+	            padding: 25px;
+        	}
+        	input[type="button"]{ padding: 13px; }
+		} 
+
+		@media #{$lg} {
+			input{
+				width: 100%;
+				display: block;
+        	}
+        	input[type="button"]{ padding: 13px; display: inline-block; width: 70%; }
+		} 
+	}
+}
